@@ -1,0 +1,66 @@
+<br/>
+<form [formGroup]="addForm" (ngSubmit)="addSeries()">
+    <div>
+        <label>Name: </label>
+        <div class="space">
+        </div>
+        <input formControlName="name" placeholder="name">
+    </div>
+    <br/>
+    <div>
+        <label>Language: </label>
+        <div class="space">
+        </div>
+        <input formControlName="language" placeholder="language">
+    </div>
+    <br/>
+    <div>
+        <label>Genre: </label>
+        <div class="space">
+        </div>
+        <input formControlName="genre" placeholder="genre">
+    </div>
+    <br/>
+    <div>
+        <label>Present Year: </label>
+        <div class="space">
+        </div>
+        <input formControlName="presentYear" placeholder="presentYear">
+    </div>
+    <br/>
+    <div>
+        <label>Proudction Name: </label>
+        <div class="space">
+        </div>
+        <input formControlName="productionName" placeholder="productionName">
+    </div>
+    <br/>
+    <div>
+        <label>Country : </label>
+        <div class="space">
+        </div>
+        <input formControlName="country" placeholder="country">
+    </div>
+    <br/>
+    <div>
+        <label>Latitude : </label>
+        <div class="space">
+        </div>
+        <input formControlName="lat" placeholder="lat">
+    </div>
+    <br/>
+    <div>
+        <label>Longitude : </label>
+        <div class="space">
+        </div>
+        <input formControlName="lng" placeholder="lng">
+    </div>
+    <br/>
+    <div class="space">
+    </div>
+    <button class="btn-primary" type="submit">Add</button>
+</form>
+<br/>
+<div *ngIf="displayMessage">
+    {{message}}
+</div>

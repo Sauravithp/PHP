@@ -1,0 +1,31 @@
+<div *ngIf="enbaledRegister">
+    <br/>
+    Please fill the following form to register:
+    <br/>
+    <br/>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>Name: </label>
+            <input formControlName="name" placeholder="Your name">
+        </div>
+        <div>
+            <label>UserName: </label>
+            <input formControlName="username" placeholder="Username">
+        </div>
+        <div>
+            <label>Password: </label>
+            <input formControlName="password" placeholder="Password">
+        </div>
+    
+        <div>
+            <label>Repeat Password: </label>
+            <input formControlName="repeatPassword" placeholder="Repeat Password">
+        </div>
+        <button type="submit">Register</button>
+        <button (click)="onCancel()">Cancel</button>
+    
+        <br/>
+        <h3 *ngIf="hasSuccess" class="alert alert-success">{{message}}</h3>
+        <h3 *ngIf="hasFail" class="alert alert-danger">{{message}}</h3>
+    </form>
+</div>

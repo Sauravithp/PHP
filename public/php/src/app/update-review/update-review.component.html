@@ -1,0 +1,28 @@
+<button class="btn-primary" (click)="onUpdate()">Update </button>
+<br/>
+<br/>
+<div *ngIf="isFormEnabled">
+    <form [formGroup]="updateReviewForm" (ngSubmit)="onUpdateReview()">
+        <div>
+            <label>Rating: </label>
+            <div class="space">
+            </div>
+            <input formControlName="rating" placeholder="rating">
+        </div>
+        <br/>
+        <div>
+            <label>Description: </label>
+            <div class="space">
+            </div>
+            <input formControlName="description" placeholder="description">
+        </div>
+        <br/>
+        <div class="space">
+        </div>
+        <button class="btn-primary">Save</button>
+        <div class="space">
+        </div>
+        <button class="btn-primary" (click)="onCancel()">Cancel</button>
+    </form>
+</div>
+

@@ -1,0 +1,24 @@
+<br/>
+<div>
+    <p><a routerLink="/reviews/{{series._id}}">Review</a></p>
+    <p><span>Name: </span> {{series.name}}</p>
+    <p><span>Language: </span>{{series.language}}</p>
+    <p><span>Genre: </span>{{series.genre}}</p>
+    <p><span>Year: </span>{{series.presentYear}}</p>
+    <p><span>Production: </span>{{series.production.name}} <button class="btn-primary" (click)="onNearBy(series)">Near By</button> </p> 
+    <div>
+    <div *ngIf="isNearByEnabled">
+              <ul>
+                <li *ngFor="let production of nearBySeriesProduction">{{production.production.name}}</li>
+              </ul>
+        </div>
+        <div *ngIf="errorMessageEnabled">{{message}}</div>
+    </div>
+</div>
+
+<div class="delete-series-detail">
+    <button class="btn-primary" (click)="onDelete(series._id)">Delete</button>
+    <div class="space">
+    </div>
+   <app-update [updateSeries]=series></app-update>
+</div>

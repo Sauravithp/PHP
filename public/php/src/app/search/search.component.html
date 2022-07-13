@@ -1,0 +1,39 @@
+<br/>
+<br/>
+
+<div class="search-series">
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+        <div>
+            <input formControlName="search" placeholder="search" size="30"><button class="btn-primary">Search</button>
+        </div>
+    </form>
+</div>
+<br/>
+<br/>
+<br/>
+<div *ngIf="seriesAvailable">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Language</th>
+        <th>Genre</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let series of seriesList">
+        <th><a routerLink="/series/{{series._id}}">{{series.name}}</a></th>
+        <td>{{ series.language}}</td>
+        <td>{{ series.genre }}</td>
+        <td>{{ series.presentYear }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="search-message" *ngIf="!seriesAvailable">{{message}}</div>
+
+ 

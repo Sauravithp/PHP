@@ -1,0 +1,35 @@
+
+<br/>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Language</th>
+        <th>Genre</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let series of seriesList">
+        <th><a routerLink="/series/{{series._id}}">{{series.name}}</a></th>
+        <td>{{ series.language}}</td>
+        <td>{{ series.genre }}</td>
+        <td>{{ series.presentYear }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<br/>
+<div class="pagination">
+    <button class="btn-primary" [disabled]="isPreviouseDisabled" (click)="onPrevious()">previous</button>
+    <div class="space">
+    </div>{{viewedCount}} of {{totalCount}}
+    <div class="space">
+    </div>
+    <button class="btn-primary" [disabled]="isNextDisabled" (click)="onNext()">Next</button>
+    <div class="space">
+    </div>
+    <div class="space">
+    </div>
+</div>
+ 

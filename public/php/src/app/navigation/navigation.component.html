@@ -1,0 +1,41 @@
+<div>
+    <a *ngIf="isloggedIn" routerLink="">Home</a>
+    <a *ngIf="isloggedIn" routerLink="/series">Series</a>
+    <a *ngIf="isloggedIn" routerLink="/add">Add</a>
+    <a *ngIf="isloggedIn" routerLink="/search">Search</a>
+    <div class="space"></div>
+    <button *ngIf="isLoggedInButtonEnabled" class="authenticationButton" (click)="onRegister()">Register</button>
+    <app-register  [enbaledRegister]=isRegisterFormEnabled (cancelEvent)="loginCancelled($event)"></app-register>
+    <button *ngIf="isLoggedInButtonEnabled" class="authenticationButton" (click)="onLogin()">Login</button>
+    <app-login  [isLoginFormEnabled]=isLoginFormEnabled (loginEvent)="loginSuccessFul($event)" (cancelEvent)="loginCancelled($event)"></app-login>
+    <button *ngIf="isloggedIn" class="authenticationButton" (click)="onLogOut()">Logout</button>
+</div>
+
+<div *ngIf="isLoggedInButtonEnabled">
+  <h1>Welcome to {{title}}</h1>
+</div>
+<br/>
+
+<div *ngIf="isLoggedInButtonEnabled">
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Language</th>
+            <th>Genre</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let series of seriesList">
+            <th>{{series.name}}</th>
+            <td>{{ series.language}}</td>
+            <td>{{ series.genre }}</td>
+            <td>{{ series.presentYear }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+
+

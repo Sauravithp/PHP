@@ -1,0 +1,16 @@
+<br />
+<ul>
+    <li *ngFor="let review of reviews">{{review.rating}} - {{review.description}}
+        <div class="space">
+        </div>
+        <button class="btn-primary" (click)="onDelete(review._id)">Delete</button>
+        <div class="space">
+        </div>
+        <app-update-review [updateReview]=review [seriesId]=seriesId></app-update-review>
+    </li>
+</ul>
+<div class="space">
+</div>    
+  <div class="space">
+</div>
+<button class="btn-primary" (click)="onAdd()" >Add Review</button>

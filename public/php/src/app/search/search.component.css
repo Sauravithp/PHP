@@ -1,0 +1,14 @@
+
+.search-message {
+    margin: auto;
+    width: 10%;
+    padding: 10px;
+  }
+
+.search-series {
+    float: right;
+}
+
+.pagination {
+  justify-content:right;
+}
